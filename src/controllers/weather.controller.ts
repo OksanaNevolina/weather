@@ -13,7 +13,6 @@ class WeatherController {
     try {
       const data = await weatherService.getWeatherCity(req.query as IQuery);
       const presentedWeathers = WeatherPresenter.weatherToResponse(data);
-        console.log(presentedWeathers)
       return res.json({ presentedWeathers });
     } catch (e) {
       next(e);
